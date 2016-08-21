@@ -52,11 +52,9 @@ func main() {
 # Dependencies
 
  * Go 1.6.x tested https://golang.org
- * httprouter https://github.com/julienschmidt/httprouter
  * govalidator https://github.com/asaskevich/govalidator
 
 ```
-go get github.com/julienschmidt/httprouter
 go get github.com/asaskevich/govalidator
 ```
 
