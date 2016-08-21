@@ -20,8 +20,8 @@ import (
 
 func main() {
 	testsite := "https://www.binaryfigments.com"
-	header := getredirect.From(testsite)
-	json, err := json.MarshalIndent(header, "", "   ")
+	redirect := getredirect.From(testsite)
+	json, err := json.MarshalIndent(redirect, "", "   ")
 	if err != nil {
 		fmt.Println(err)
 		return
