@@ -1,6 +1,10 @@
 # getredirect
 
-Get redirect of URL, programmed in Go.
+Get redirect of URL, programmed in Go. Install with:
+
+```shell
+go get github.com/binaryfigments/getredirect
+```
 
 # Example usage
 
