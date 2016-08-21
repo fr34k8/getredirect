@@ -24,6 +24,7 @@ type Answer struct {
 	HTTPStatus     int      `json:"HTTPStatus"`
 	HTTPStatusText string   `json:"HTTPStatusText"`
 	HTTPRedirect   string   `json:"HTTPRedirect,omitempty"`
+	Location       string   `json:"Location,omitempty"`
 	HTTPProto      string   `json:"HTTPProto"`
 	IPAddress      []string `json:"IPAddress,omitempty"`
 	Connection     string   `json:"Connection,omitempty"`
@@ -89,6 +90,9 @@ func From(testurl string) *ReturnMessage {
 	h.Answer.HTTPStatusText = resp.Status
 	h.Answer.HTTPProto = resp.Proto
 	h.Answer.IPAddress = addrs
+
+	// TODO: Do not always get a Location
+	h.Answer.Location = resp.Header.Get("Location")
 
 	timeout := time.Duration(2 * time.Second)
 	client := http.Client{
